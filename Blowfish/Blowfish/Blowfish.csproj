@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA61645F-69B4-42DF-9F20-0FDE2BB4A475}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Blowfish</RootNamespace>
+    <AssemblyName>Blowfish</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlowfishEncoder.cs" />
+    <Compile Include="IEncoder.cs" />
+    <Compile Include="Scenarios\BinaryConverter.cs" />
+    <Compile Include="Scenarios\ChainScenario.cs" />
+    <Compile Include="Scenarios\IScenario.cs" />
+    <Compile Include="Scenarios\BlockProvider.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenarios\KeyErrorPropagationScenario.cs" />
+    <Compile Include="Scenarios\RandomDataScenario.cs" />
+    <Compile Include="Scenarios\SpecialDataScenario.cs" />
+    <Compile Include="Scenarios\TestSuiteRunner.cs" />
+    <Compile Include="Scenarios\TextCorrelationScenario.cs" />
+    <Compile Include="Scenarios\TextErrorPropagationScenario.cs" />
+    <Compile Include="Tests\ApproximateEntropy.cs" />
+    <Compile Include="Tests\BlockFrequency.cs" />
+    <Compile Include="Tests\CumulativeSums.cs" />
+    <Compile Include="Tests\DiscreteFourierTransform.cs" />
+    <Compile Include="Tests\Frequency.cs" />
+    <Compile Include="Tests\LinearComplexity.cs" />
+    <Compile Include="Tests\LongestRunOfOnes.cs" />
+    <Compile Include="Tests\NonOverlappingTemplateMatching.cs" />
+    <Compile Include="Tests\OverlappingTemplateMatching.cs" />
+    <Compile Include="Tests\RandomExcursions.cs" />
+    <Compile Include="Tests\RandomExcursionsVariant.cs" />
+    <Compile Include="Tests\Rank.cs" />
+    <Compile Include="Tests\Runs.cs" />
+    <Compile Include="Tests\Serial.cs" />
+    <Compile Include="Tests\Test.cs" />
+    <Compile Include="Tests\Universal.cs" />
+    <Compile Include="Utils\Cephes.cs" />
+    <Compile Include="Utils\FFT.cs" />
+    <Compile Include="Utils\Report.cs" />
+    <Compile Include="Utils\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
